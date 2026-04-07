@@ -101,7 +101,7 @@ const TecaPage = () => {
       <div className="flex-1 px-4 overflow-y-auto" data-testid="teca-chat-area">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-pink-400/80 via-purple-500/80 to-indigo-500/80 backdrop-blur-md rounded-3xl p-6 min-h-80 flex flex-col border border-white/20 shadow-2xl mb-4">
-            <div className="flex-1 space-y-4 overflow-y-auto">
+            <div className="flex-1 space-y-4 overflow-y-auto max-h-64 pr-1">
               {messages.map((msg) => (
                 <div
                   key={msg.id}

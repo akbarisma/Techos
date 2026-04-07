@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { CalendarDays, Clock, CheckCircle, XCircle } from 'lucide-react';
 import CTASection from '../components/CTASection';
 
@@ -49,6 +50,14 @@ const historyData = [
 ];
 
 const HistoryPage = () => {
+  const [activeTab, setActiveTab] = useState('Semua');
+
+  const filteredHistory = historyData.filter(item => {
+    if (activeTab === 'Selesai') return item.status === 'completed';
+    if (activeTab === 'Dibatalkan') return item.status === 'cancelled';
+    return true;
+  });
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
@@ -66,15 +75,17 @@ const HistoryPage = () => {
             {['Semua', 'Selesai', 'Dibatalkan'].map((tab) => (
               <button
                 key={tab}
-                className="px-5 py-3.5 text-sm font-semibold border-b-2 border-[#17C3C9] text-[#17C3C9] first:block hidden first:block"
+                onClick={() => setActiveTab(tab)}
+                className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors ${
+                  activeTab === tab
+                    ? 'border-[#17C3C9] text-[#17C3C9]'
+                    : 'border-transparent text-gray-500 hover:text-gray-700'
+                }`}
                 data-testid={`history-tab-${tab.toLowerCase()}`}
               >
                 {tab}
               </button>
             ))}
-            <button className="px-5 py-3.5 text-sm font-semibold border-b-2 border-[#17C3C9] text-[#17C3C9]" data-testid="history-tab-all">
-              Semua
-            </button>
           </div>
         </div>
       </div>
@@ -83,7 +94,7 @@ const HistoryPage = () => {
       <section className="py-10" data-testid="history-list">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4">
-            {historyData.map((item) => (
+            {filteredHistory.map((item) => (
               <div
                 key={item.id}
                 className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 flex flex-col sm:flex-row gap-5 items-start sm:items-center"
