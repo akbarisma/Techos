@@ -1,0 +1,138 @@
+{
+  "theme": "Mixed/Dark Theme",
+  "archetype": "Custom Archetype (High Contrast Tech/Service)",
+  "colors": {
+    "primary": "#17C3C9",
+    "primary_hover": "#34C7C7",
+    "background_dark": "#1D4F4F",
+    "background_darker": "#143838",
+    "background_cyan": "#17C3C9",
+    "background_light": "#FFFFFF",
+    "background_gray": "#F3F6F6",
+    "text_on_dark": "#FFFFFF",
+    "text_muted_on_dark": "#A8C4C4",
+    "text_on_light": "#1A1A1A",
+    "text_muted_on_light": "#666666",
+    "chat_gradient": "bg-gradient-to-r from-pink-500 to-purple-500"
+  },
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "Manrope",
+    "heading_classes": "font-outfit tracking-tight",
+    "body_classes": "font-manrope leading-relaxed"
+  },
+  "spacing": {
+    "section_padding": "py-24",
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "card_padding": "p-6 sm:p-8"
+  },
+  "ui_elements": {
+    "buttons": {
+      "primary": "bg-[#17C3C9] hover:bg-[#34C7C7] text-white font-semibold rounded-lg px-6 py-3 transition-colors",
+      "dark": "bg-[#143838] hover:bg-[#1D4F4F] text-white font-semibold rounded-lg px-6 py-3 transition-colors",
+      "outline": "border-2 border-[#17C3C9] text-[#17C3C9] hover:bg-[#17C3C9] hover:text-white font-semibold rounded-lg px-6 py-3 transition-colors",
+      "danger": "bg-red-50 hover:bg-red-100 text-red-600 font-semibold rounded-lg px-6 py-3 transition-colors"
+    },
+    "cards": {
+      "service": "relative overflow-hidden rounded-2xl group cursor-pointer shadow-lg",
+      "service_overlay": "absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6",
+      "technician": "bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6 text-center transition-transform hover:-translate-y-2 duration-300",
+      "schedule": "bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center"
+    }
+  },
+  "layout_sections": {
+    "navbar": "bg-[#1D4F4F] text-white sticky top-0 z-50 shadow-md",
+    "hero": "bg-[#1D4F4F] text-white relative overflow-hidden",
+    "chatbot": "bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-3xl shadow-xl max-w-4xl mx-auto p-8 border border-white/20 backdrop-blur-md",
+    "nearest_technician": "bg-[#17C3C9] text-white",
+    "benefits": "bg-[#1D4F4F] text-white relative",
+    "cta": "bg-[#1D4F4F] text-white rounded-3xl overflow-hidden relative shadow-2xl",
+    "booking_form": "bg-[#143838] p-8 rounded-3xl text-white shadow-xl"
+  },
+  "pages": [
+    {
+      "name": "Home",
+      "sections": [
+        "Navbar with logo, nav links, 24 Hour Services badge",
+        "Hero split section with bold text and dual technician images",
+        "Teca AI Chatbot section (gradient pink/purple bg, chat input, suggestion chips)",
+        "Service Carousel (cards with background images, gradient overlays, cyan button)",
+        "Nearest Technicians (cyan background, white cards with technician photos and dark 'Panggilan' button)",
+        "Benefits section (dark teal background, SVG wave separator at top, 2-column layout with 5 features)",
+        "How it works (3 large numbered steps, technician photo on right)",
+        "CTA (dark teal background, person holding phone image on right)",
+        "Newsletter (cyan background)",
+        "Footer (dark teal)"
+      ]
+    },
+    {
+      "name": "Services",
+      "sections": [
+        "Grid of all service cards (Instalasi Listrik, CCTV, Service AC, dll)"
+      ]
+    },
+    {
+      "name": "Service Detail / Booking",
+      "sections": [
+        "Service Hero image and description",
+        "Booking Form in dark green (#143838): problem selection, property type, calendar, time slot, vehicle requirement, estimated price, 'Buat Pesanan' CTA"
+      ]
+    },
+    {
+      "name": "Schedule",
+      "sections": [
+        "List of upcoming service appointments. White cards on light gray background.",
+        "Each card has service image, technician name, date/time, and 'Reschedule' (Cyan) / 'Cancel' (Red/Text) buttons"
+      ]
+    },
+    {
+      "name": "History",
+      "sections": [
+        "List of past service appointments. Similar to schedule but with status badges (Completed, Cancelled)"
+      ]
+    },
+    {
+      "name": "Chatbot / Teca",
+      "sections": [
+        "Dedicated full-page AI Chatbot interface for Teca with conversation history, pink/purple gradient styling, suggestion chips"
+      ]
+    }
+  ],
+  "components_instructions": [
+    "Use purely standard React+Tailwind for complex marketing sections like Hero and Benefits.",
+    "Use shadcn/ui Calendar for the date picker in Booking.",
+    "Use shadcn/ui Select for dropdowns in the Booking form (property type, vehicle).",
+    "Use shadcn/ui Input for chatbot inputs and newsletter.",
+    "Use shadcn/ui Dialog for Reschedule/Cancel confirmations if needed.",
+    "Use lucide-react for all icons (check, calendar, map-pin, phone, etc).",
+    "In the Chatbot section, ensure the pink/purple gradient is vibrant and has good contrast for white text."
+  ],
+  "image_urls": {
+    "hero": {
+      "left": "https://images.unsplash.com/photo-1709102884400-b50ca1a12bc3",
+      "right": "https://images.unsplash.com/photo-1770656505709-fd97236989b9"
+    },
+    "services": {
+      "ac_repair": "https://images.unsplash.com/photo-1718203862467-c33159fdc504",
+      "cctv": "https://images.unsplash.com/photo-1589935447067-5531094415d1",
+      "smart_home": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90",
+      "washing_machine": "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c",
+      "electrician": "https://images.unsplash.com/photo-1682345262055-8f95f3c513ea"
+    },
+    "technicians": [
+      "https://images.unsplash.com/photo-1586447751596-6c2050a0d335",
+      "https://images.unsplash.com/photo-1687462970787-61d953508926",
+      "https://images.unsplash.com/photo-1717229773894-8e7c04aac950"
+    ],
+    "how_it_works": "https://images.unsplash.com/photo-1606485940233-76eeff49360c",
+    "cta_person": "https://images.unsplash.com/photo-1593733925160-6f78dc0be8b6"
+  },
+  "rules": [
+    "Include data-testid on ALL interactive elements (buttons, inputs, links, cards)",
+    "Do NOT use placeholder image URLs under any circumstances",
+    "Maintain high contrast ratios for text on backgrounds",
+    "Icons MUST be imported from lucide-react",
+    "Do not center-align everything; use deliberate layout grids",
+    "Ensure the application works perfectly as a static UI frontend without backend dependencies"
+  ]
+}
